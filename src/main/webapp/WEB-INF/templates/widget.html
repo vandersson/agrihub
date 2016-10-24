@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8"/>
+<head>
+
+
+</head>
+<body>
+<section th:fragment="widget (node, id)" class="widget">
+    <h1 th:text="${node.name}"></h1>
+    <hr/>
+    <div class="ambienceContainer">
+        <div class="daytime">
+            <img src="webcontent/moon.svg" class="moonsvg"/>
+        </div>
+        <div class="temperature">
+            <span class="vertDiv"></span>
+            <span id="temp" th:text="${node.temperature}+'&degC'"></span>
+            <svg
+                    xmlns:dc="http://purl.org/dc/elements/1.1/"
+                    xmlns:cc="http://creativecommons.org/ns#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                    xmlns:svg="http://www.w3.org/2000/svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+                    width="10mm"
+                    height="40mm"
+                    viewBox="0 0 177.16535 708.66141"
+                    id="svg4164"
+                    version="1.1"
+                    inkscape:version="0.91 r13725"
+                    sodipodi:docname="thermostat.svg">
+
+                <g
+                        inkscape:label="Layer 1"
+                        inkscape:groupmode="layer"
+                        id="layer1"
+                        transform="translate(0,-343.70079)">
+                    <path
+                            class="thermoborder"
+                            style="opacity:1;fill:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 108.94854,897.64542 c 26.55169,9.41506 45.7094,27.35022 45.7094,63.89214 0,36.54192 -28.36038,66.41754 -64.902302,66.41754 -36.541919,0 -66.164995,-29.62308 -66.164993,-66.165 1.236585,-25.56148 15.832298,-53.13384 46.47083,-63.95171"
+                            th:id="'tempborder' + ${id}"
+                            inkscape:connector-curvature="0"
+                            sodipodi:nodetypes="csscc"
+                    />
+                    <circle
+                            class="temperatureWarm"
+                            style="opacity:1;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            th:id="'tempbowl' + ${id}"
+                            cx="89.903572"
+                            cy="961.93646"
+                            r="53.538086"/>
+                    <path
+                            class="thermoborder"
+                            style="opacity:1;fill:none;fill-opacity:1;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 68.214279,899.85568 0,-512.49036 c 0,-12.12985 9.4775,-17.87814 21.25,-17.87814 11.772501,0 21.250001,4.99067 21.250001,19.14083 l 0,511.22767"
+                            th:id="'tempbowlborder' + ${id}"
+                            inkscape:connector-curvature="0"
+                            sodipodi:nodetypes="csssc"
+                    />
+                    <rect
+                            class="temperatureWarm thermorect"
+                            style="opacity:1;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                            th:id="'tempgauge' + ${id}"
+                            width="21.646488"
+                            height="1"
+                            x="79.173645"
+                            y="381.77972"
+                            rx="9.7942266"
+                            ry="11.299351"/>
+                </g>
+            </svg>
+        </div>
+    </div>
+    <!--<hr/>-->
+    <!--<h2>Light</h2>-->
+    <!--<p id="ligh" th:text="${node.light}"></p>-->
+
+    <hr/>
+    <h2>Soil moisture</h2>
+    <!--<p id="moi" th:text="${node.moisture}"></p>-->
+    <svg th:id="'moistureGauge' + ${id}" height="200" th:onload="'moistureWidget(\'moistureGauge'+${id}+'\');'"></svg>
+</section>
+</body>
+</html>

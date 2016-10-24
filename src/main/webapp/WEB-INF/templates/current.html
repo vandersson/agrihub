@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8"/>
+<head>
+    <title>Garden sensors</title>
+    <link rel="stylesheet" type="text/css" href="webcontent/dash.css"/>
+    <script src="https://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="webcontent/liquidFillGauge.js" language="JavaScript"></script>
+    <script src="webcontent/current.js" language="JavaScript"></script>
+    <script src="webcontent/thermostat.js" language="JavaScript"></script>
+    <script language="JavaScript">
+        function app() {
+//            update();
+
+
+        }
+    </script>
+</head>
+
+<body onload="app()">
+<h1>the garden.</h1>
+<div class="container">
+    <section th:replace="widget :: widget (node=${current}, id=1)"/>
+    <section th:replace="widget :: widget (node=${current}, id=2)"/>
+    <svg id="testsvg"></svg>
+</div>
+</body>
+
+</html>
