@@ -10,7 +10,7 @@
     font-family: "DejaVu Serif";
     box-shadow: 1px 1px 5px #063;
     padding: .25em 1em 1.5em;
-    margin: 1em .5em 1.5em;
+    margin: 1em 1reem 1.5em;
 }
 .widget h2 {
     font-weight: lighter;
@@ -18,6 +18,7 @@
 }
 
 .widget h1 {
+    text-align: left;
     margin-left: 0em;
     font-size: 2em;
 }
@@ -30,15 +31,17 @@
 body {
     color: #063;
     /*background-color: #CDC;*/
-    background: url(download.jpg) no-repeat center center fixed;
+    background: url(evening_field.JPG) no-repeat center center fixed;
     background-size: cover;
 }
 
 body h1 {
     font-family: "DejaVu Serif";
     margin-left: 1em;
+    margin-right: 1em;
     font-weight: lighter;
     font-size: 2.5em;
+    text-align: right;
     /*color: #CCD;*/
 }
 
